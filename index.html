@@ -1,0 +1,320 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+  <style>
+    body {
+      background-color: rgb(67, 119, 143);
+    }
+
+    .column-is-3 {
+      height: 30%
+    }
+
+    .card-image {
+      align-self: center;
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .card-image:hover {
+      opacity: 0.4;
+    }
+
+    .Nav-header {
+      text-align: center;
+      margin-right: 100px;
+      font-size: 60px;
+      font-family: "Optima";
+      color: whitesmoke;
+    }
+
+    .navbar-menu.is-active {
+      background-color: rgba(0, 0, 0, 0.719);
+    }
+
+    .header-three {
+      text-align: center;
+      font-style: italic;
+      color: whitesmoke;
+    }
+
+    .navbar-item:hover .button {
+      background-color: grey;
+    }
+
+    .mission {
+      font-size: larger;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-style: italic;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 5%;
+      margin-bottom: 2%;
+      color: whitesmoke;
+    }
+
+    .right-side-content{
+      background-color:rgba(0, 0, 0, 0.719);
+      text-align: center;
+      color: white;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      opacity: 95%;
+      height: 100%;
+    }
+
+    .search{
+      font-size:larger;
+    }
+    
+    .contact{
+      margin-top:20%
+    }
+
+    .copyright {
+      font-size: 8mm;
+    }
+
+    footer {
+      margin-top: 10%;
+      text-align: center;
+      background-color: rgb(26, 21, 21);
+      color: white;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal" id="mymodal">
+    <div class="modal-background" id="modalback"></div>
+    <div class="modal-content p-6 has-background-white">
+      <h1 class="is-size-4 title">Sign In</h1>
+      <form id="signin_form">
+
+        <!-- User Email -->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input type="email" id="email_">
+          </div>
+        </div>
+
+        <!-- User Password -->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input type="password" id="password_">
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="field">
+          <div class="control">
+            <button class="m-3 button is-link">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- POST RECIPE MODAL -->
+  <div class="modal" id="post-recipe">
+    <div class="modal-background" id="post-recipe"></div>
+    <div class="modal-content p-6 has-background-white">
+      <h1 class="is-size-2 title has-text-weight-bold is-family-sans-serif">Post Recipe Here</h1>
+    </div>
+  </div>
+
+  <!-- SIGN UP MODAL -->
+  <div class="modal" id="mymodal2">
+    <div class="modal-background2" id="modalback2"></div>
+    <div class="modal-content p-6 has-background-white">
+      <h1 class="is-size-4 title">Sign Up</h1>
+      <form id="signupmodal">
+
+        <!-- comment -->
+        <!-- User Email -->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input type="email" id="email">
+          </div>
+        </div>
+
+        <!-- User Password -->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input type="password" id="password">
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="field">
+          <div class="control">
+            <button class="m-3 button is-link">Submit</button>
+          </div>
+        </div>
+
+        <div class="error has-text-danger" id="signup_error">
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- burger symbol list -->
+  <div class="navbar-burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Our NavBar -->
+  <div class="navbar-menu is-active">
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="index.html">
+          <h1 class="Nav-header">Delicately Delicious<sup class="copyright">&#174</sup></h1>
+        </a>
+      </div>
+      <div class="navbar-item">
+        <a href="index.html"><button class="button is-light-is-outlined">Home</button></a>
+      </div>
+      <div class="navbar-item">
+        <a class="loggedin" id="postRecipeBtn"><button class="button is-light-is-outlined">Add Recipe</button></a>
+      </div>
+      <div class="navbar-item">
+        <a class="loggedout"><button class="button is-light-is-outlined" id="signinbutton">Sign-In</button></a>
+      </div>
+      <div class="navbar-item">
+        <a class="loggedout"><button class="button is-light-is-outlined" id="signinbuttonv">Sign-Up</button></a>
+      </div>
+      <div class="navbar-item">
+        <a class="loggedin"><button class="button is-light-is-outlined" id="signoutbtn">Sign Out</button></a>
+      </div>
+    </div>
+  </div>
+
+  <p class="mission">
+    Looking for some new recipes to spice up your life in the kitchen? You've come to the right place! Delicately
+    Delicious has an
+    abundance of recipes of all kinds! Whether you are celebrating a birthday and need a yummy cake recipe, or you're
+    simply looking to
+    make a top-notch dinner for friends, Delicately Delicious can deliver. Sign up
+    to see all recipes and to upload your own.
+    See some of the featured dishes below to get an idea what we're all about.
+  </p>
+
+
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="columns is-multiline is-mobile">
+          <!-- left column -->
+          <div class="column is-3">
+            <div class="card-image">
+                <img class="card-image mt-6" src="salmon1.jpeg" alt="Mac and Cheese">
+              <h3 class="header-three"> Spring Salmon </h3>
+            </div>
+            <!-- 2nd row, 1st column -->
+            <div class="card-image">
+              <img class="card-image mt-6" src="steak.jpeg" alt="steak">
+              <h3 class="header-three"> Steak & Asparagus </h3>
+            </div>
+          </div>
+
+          <!-- middle column -->
+          <div class="column is-6" id="main">
+            <div class="container" id="hidden_form">
+              <form id="submitrecipeform"></form>
+            </div>
+            <div class="container" id="content">
+              <p>TODO - dynamic content will appear in this space</p>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="column is-3">
+            <!-- search -->
+            <div class = "right-side-content">
+              <p class="has-text-centered p-6 has-text-white">
+                <!-- <b class= "search">Search For Recipe</b><input type="text" id="search_box" value="search title here" class="p-1 m-1" /> -->
+                <b>Search for Recipe</b><input class="input is-medium" type="text" id="search_box">
+                <input type="button" class="button mt-2 is-info" id="search_button" value="Search">
+              </p>
+              <p>
+                <b>About Us</b>
+              </p>
+              <p>
+                Delicately Delicious was started with the goal of providing people
+                with recipes that our own users have shared. Our mission is to spice 
+                up kitchens across the country with our delicious recipes - there's one 
+                for every occasion!
+              </p>
+              <h1 class="contact"><b>Contact:</b> DelicatelyDelicious@gmail.com</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <i><small> Copyright © 2021 Delicately Delicious <br>
+      </small> </i>
+    <a href="AboutUs.html" class="foot"> Contact Us</a>
+  </footer>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDv4f-UrAwVtseKEEJLhA7rvCb96M0Vu3c",
+      authDomain: "groupprojectfinal-a068d.firebaseapp.com",
+      projectId: "groupprojectfinal-a068d",
+      storageBucket: "groupprojectfinal-a068d.appspot.com",
+      messagingSenderId: "1078627410120",
+      appId: "1:1078627410120:web:e6437da72f1facda6545fd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // define authentication variable
+    let auth = firebase.auth();
+    let db = firebase.firestore();
+
+    // define a storage reference
+    let ref = firebase.storage().ref();
+  </script>
+
+  <!-- make sure to add your own js file as the last line in index.html file -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>

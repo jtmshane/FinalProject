@@ -1,0 +1,208 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+        <style>
+    
+          body{
+            background-color: rgb(67, 119, 143);
+          }
+          .card-image1{
+            width: 100%;
+            border-radius: 50%;
+          }
+          .card-image{
+            align-self: center;
+          }
+          .card-image:hover .card-image1{
+            opacity: 0.4;
+          }
+    
+          .Nav-header{
+            text-align: center;
+            margin-left: auto;
+            font-size: 60px;
+            font-family: "Optima";
+           
+          }
+          .navbar-menu.is-active{
+              background-color: rgba(0, 0, 0, 0.719);
+          }
+    
+          h1{
+            color:whitesmoke;
+          }
+          
+          h2{
+            text-align: center;
+            font-size: 200%;
+            font-style: oblique;
+            color:whitesmoke;
+          }
+          h3{
+            color:whitesmoke;
+          }
+    
+          .header-three{
+            text-align: center;
+            font-style: italic;
+          }
+          .navbar-item:hover .button{
+            background-color: grey;
+          }
+    
+          .para1{
+            font-size: larger;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 5%;
+            margin-bottom: 2%;
+            color: whitesmoke;
+          }
+          .sup1{
+            font-size: 8mm;
+        }
+        .su{
+          color: black;
+        }
+
+        footer{
+            margin-top: 10%;
+            text-align: center;
+            background-color: rgb(26, 21, 21);
+            color: white;
+            }
+
+        .first{
+            width: 60%;
+        }
+
+        .field1{
+            text-align: left;
+            margin-top: 3%;
+            margin-bottom: 5%;
+            color: black;
+        }
+    
+        </style>
+    </head>
+    
+    
+    <body>
+    
+        <!-- burger symbol list -->
+            <div class = "navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+         <!-- Our NavBar -->
+         <div class="navbar-menu is-active">
+                    
+          <div class="navbar-end">
+                  <div class = "navbar-item">
+                      <a href = "index.html"><h1 class= "Nav-header">Delicately Delicious<sup class="sup1">&#174</sup></h1></a>
+                  </div>
+                  <div class = "navbar-item">
+                      <a href = "index.html"><button class="button is-light-is-outlined">Home</button></a>
+                  </div> 
+                  <div class="navbar-item">
+                    <a href = "Recipes.html"><button class="button is-light-is-outlined">Recipes</button></a>
+                  </div>
+                  <div class = "navbar-item">
+                    <a href = "Categories.html"><button class="button is-light-is-outlined">Categories</button></a>
+                  </div>
+                  <div class="navbar-item">
+                      <a href="Upload.html"><button class="button is-light-is-outlined">Add Recipe</button></a>
+                  </div>
+                  <div class = "navbar-item">
+                    <a href="Sign-In.html"><button class="button is-light-is-outlined">Sign-In</button></a>
+                  </div>
+                  <div class = "navbar-item">
+                    <a href = "Sign-Up.html"><button class="button is-light-is-outlined">Sign-Up</button></a>
+                  </div>  
+                  <div class = "navbar-item">
+                    <a href = "AboutUs.html" ><button class="button is-light-is-outlined">About Us</button></a>
+                  </div>
+          </div>
+      </div>
+
+    
+    
+    <div>
+        <p class="para1"> Submit Recipe Below!</p>
+    </div>
+            <div class="container">
+                <div class="first">
+                    <div class="field">
+                        <label class="label"> Recipe Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="[Recipe name]">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Ingredients</label>
+                        <div class="control">
+                            <!-- <input class="input" type = "text" placeholder="Text input"> -->
+                            <textarea class="textarea" placeholder="Add ALL ingredients here (please use full names for ingredients. Use tbsp for tablespoon, tsp for teaspoon, etc." rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Instructions</label>
+                        <div class="control">
+                            <!-- <input class="input" type = "text" placeholder="Text input"> -->
+                            <textarea class="textarea" placeholder="Enter cooking/baking directions here as well as any utensils or machines required" rows="10"></textarea>
+                    </div>
+
+                    <div class="field1">
+                        <label class="label">Image Upload</label>
+                        <div class="file has-name">
+                            <label class="file-label">
+                            <input class="file-input" type="file" name="Photo">
+                            <span class="file-cta">
+                                <span class="image-icon">
+                                <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                Choose a Photo…
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                photo.jpeg, photo.png
+                            </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link">Submit</button>
+                        </div>
+    
+                        <div class="control">
+                            <button class="button is-link is-light">Cancel</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <footer>
+                <i><small> Copyright © 2021 Delicately Delicious <br> 
+                </small> </i>
+                <a href="AboutUs.html" class ="foot"> Contact Us</a>
+              </footer>
+</body>
+    
+</html>
+    
